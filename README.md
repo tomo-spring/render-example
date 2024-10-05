@@ -12,15 +12,15 @@ See https://render.com/docs/deploy-fastapi or follow the steps below:
 4. Render will automatically detect that you are deploying a Python service and use `pip` to download the dependencies.
 5. Specify the following as the Start Command.
 
-    ```shell
-    uvicorn main:app --host 0.0.0.0 --port $PORT
-    ```
+   ```shell
+   uvicorn main:app --host 0.0.0.0 --port $PORT
+   ```
 
 6. Click Create Web Service.
 
 Or simply click:
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/render-examples/fastapi)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/tomo-spring/render-example)
 
 ## Thanks
 

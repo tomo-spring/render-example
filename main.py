@@ -6,6 +6,7 @@ from pdfminer.high_level import extract_text
 from pdfminer.pdfparser import PDFSyntaxError
 from pdf2image import convert_from_bytes
 import pytesseract
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
@@ -41,3 +42,16 @@ async def extract_text_from_pdf(request: PDFRequest):
         raise HTTPException(status_code=400, detail=f"Invalid PDF file: {e}")
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error processing PDF: {e}")
+
+
+origins = [
+    "*",  # 必要に応じて制限
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
